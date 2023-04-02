@@ -5,9 +5,10 @@ import getScrollAnimation from "../utils/getScrollAnimation";
 import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
 
 const features = [
-  {text: "Webnar Nome Incrível", href: "https://google.com"},
-  {text: "Mentoria de milhões", href: "https://google.com"},
-  {text: "Palestra com fuluna", href: "https://google.com"}
+  "Qualificação 1 muito relevante",
+  "Segunda qualificação em ordem de importancia",
+  "Terceira qualificação",
+  "Quarta qualificação"
 ]
 
 const Feature = () => {
@@ -15,14 +16,14 @@ const Feature = () => {
 
   return (
     <div
-      className="max-w-screen-xl mt-32 mb-6 sm:mt-32 sm:mb-14 px-6 sm:px-8 lg:px-16 mx-auto"
-      id="next-events"
+      className="max-w-screen-xl mt-8 mb-6 sm:mt-14 sm:mb-14 px-6 sm:px-8 lg:px-16 mx-auto"
+      id="about"
     >
       <div className="grid grid-flow-row sm:grid-flow-col grid-cols-1 sm:grid-cols-2 gap-8 p  y-8 my-12">
         <ScrollAnimationWrapper className="flex w-full justify-end">
           <motion.div className="h-full w-full p-4" variants={scrollAnimation}>
             <Image
-                src="/assets/Illustration2.png"
+                src="/assets/karine2.png"
                 alt="VPN Illustrasi"
                 layout="responsive"
                 quality={100}
@@ -36,12 +37,15 @@ const Feature = () => {
 
         <motion.div className="flex flex-col items-end justify-center ml-auto w-full lg:w-9/12" variants={scrollAnimation}>
           <h3 className="text-3xl lg:text-4xl font-medium leading-relaxed text-black-600">
-            Veja os próximos eventos
+            Quem é Karine Rodrigues?
           </h3>
-          <ul className="text-black-500 self-start list-inside ml-8 mt-8">
+          <p className="my-2 text-black-500">
+            Texto muito legal que gere identidade com as pessoas, seqguido de algumas qualificações.
+          </p>
+          <ul className="text-black-500 self-start list-inside ml-8">
             {features.map((feature, index) => (
               <motion.li
-                className="relative custom-list"
+                className="relative circle-check custom-list"
                 custom={{duration: 2 + index}}
                 variants={scrollAnimation}
                 key={feature}
@@ -51,9 +55,7 @@ const Feature = () => {
                   duration: .2
                 }
                 }}>
-                  <a className="feature-event-link" href={feature.href}>
-                    {feature.text}
-                  </a>
+                  {feature}
               </motion.li>
               )
             )}
