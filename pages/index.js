@@ -1,18 +1,49 @@
-import About from "../components/About";
 import Feature from "../components/Feature";
 import Hero from "../components/Hero";
 import Layout from "../components/Layout/Layout";
 import CallSection from "../components/CallSection";
 import SeoHead from "../components/SeoHead";
 import TestimoniSection from "../components/TestimoniSection";
+import ImageWithText from "../components/ImageWithText";
 
 export default function Home() {
   return (
     <>
       <SeoHead title='LaslesVPN Landing Page' />
       <Layout>
-        <Hero />
-        <About />
+        <Hero title="Não fique de fora do webnar holístico <strong>nome muito atrativo</strong>"
+              description="Nele falaremos sobre <strong>algo muito importante</strong> e será feito de tal forma, com tais pessoas, você não pode perder."
+              button={{
+                  href: "/events/webnar-xyz",
+                  text: 'saiba mais'
+              }}
+              image="/assets/Illustration1.png"
+              listUser={[
+                  {
+                      name: "Participantes",
+                      number: "10",
+                      icon: "/assets/Icon/heroicons_sm-user.svg",
+                  },
+                  {
+                      name: "Eventos",
+                      number: "3",
+                      icon: "/assets/Icon/gridicons_location.svg",
+                  },
+                  {
+                      name: "Algo",
+                      number: "50",
+                      icon: "/assets/Icon/bx_bxs-server.svg",
+                  },
+              ]}
+        />
+          <ImageWithText
+              id="about"
+              description="O evento será sobre XYZ, contará com ABC..." image="/assets/karine2.png" title="Quem é Karine Rodrigues" features={[
+              "Qualificação 1 muito relevante",
+              "Segunda qualificação em ordem de importancia",
+              "Terceira qualificação",
+              "Quarta qualificação"
+              ]} />
         <TestimoniSection />
         <CallSection />
         <Feature />
