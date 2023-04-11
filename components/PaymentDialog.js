@@ -1,17 +1,29 @@
 import React, {useState} from "react";
 const PaymentDialog =() => {
   const [state, setState] = useState({ stage: 0})
+  const [paymentMethod, setPaymentMethod] = useState({ stage: 0})
   const closeModal = () => {
     document.querySelector('dialog').close()
   }
   const setStage = (stage) => {
     setState({stage: stage})
   }
+  const selectPaymentMethod = (paymentMethod) => {
+    setPaymentMethod(paymentMethod)
+    if (paymentMethod === 'credit_card') return setState({stage: state.stage + 1})
+    setState({stage: state.stage + 2})
+  }
   const nextStage = () => {
     setStage(state.stage+1)
   }
+
   const previousStage = () => {
     setStage(state.stage-1)
+  }
+
+  const previousPaymentStage = () => {
+    if (paymentMethod === 'credit_card') return previousStage()
+    setStage(state.stage-2)
   }
   return (
     <>
@@ -57,13 +69,13 @@ const PaymentDialog =() => {
         <>
           <h2>Selecione um meio de pagamento</h2>
           <div className="checkout-methods">
-              <button onClick={() => setStage(3)} className="btn">
+              <button onClick={() => selectPaymentMethod("bank_splip")} className="btn">
                 Boleto
               </button>
-              <button onClick={() => setStage(3)} className="btn">
+              <button onClick={() => selectPaymentMethod("pix")} className="btn">
                 Pix
               </button>
-              <button onClick={() => setStage(2)} className="btn">
+              <button onClick={() => selectPaymentMethod("credit_card")} className="btn">
                 Cartão de crédito
               </button>
           </div>
@@ -114,12 +126,8 @@ const PaymentDialog =() => {
             </div>
           </form>
           <div className="flex justify-center gap-4">
-            <button className="py-3 lg:py-4 px-12 lg:px-16 text-white-500 font-semibold rounded-lg bg-black-500 hover:shadow-black-md transition-all outline-none" onClick={closeModal}>Cancelar</button>
+            <button className="py-3 lg:py-4 px-12 lg:px-16 text-white-500 font-semibold rounded-lg bg-black-500 hover:shadow-black-md transition-all outline-none" onClick={previousStage}>Voltar</button>
             <button className="py-3 lg:py-4 px-12 lg:px-16 text-white-500 font-semibold rounded-lg bg-orange-500 hover:shadow-orange-md transition-all outline-none" onClick={nextStage}>Avançar</button>
-          </div>
-          <div>
-            <button onClick={previousStage}>Voltar</button>
-            <button onClick={nextStage}>Avançar</button>
           </div>
         </>
       ) }
@@ -136,29 +144,55 @@ const PaymentDialog =() => {
                 name="cep"
                 id="cep" type="text" placeholder="9999 9999 9999 9999"/>
             </div>
-            <div className="form-group">
-              <label htmlFor="country">País</label>
-              <input type="text" id="country" name="country"/>
+            <div className="mb-4">
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="country">
+                País:
+              </label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                name="country"
+                id="country" type="text" placeholder="9999 9999 9999 9999"/>
             </div>
-            <div className="form-group">
-              <label htmlFor="state">Estado</label>
-              <input type="text" id="state" name="state"/>
+            <div className="mb-4">
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="state">
+                Estado:
+              </label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                name="state"
+                id="state" type="text" placeholder="9999 9999 9999 9999"/>
             </div>
-            <div className="form-group">
-              <label htmlFor="address">Endereço</label>
-              <input type="text" id="address" name="address"/>
+            <div className="mb-4">
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="address">
+                Endereço:
+              </label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                name="address"
+                id="address" type="text" placeholder="9999 9999 9999 9999"/>
             </div>
-            <div className="form-group">
-              <label htmlFor="address_number">Número</label>
-              <input type="text" id="address_number" name="address_number"/>
+            <div className="mb-4">
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="address_number">
+                Número:
+              </label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                name="address_number"
+                id="address_number" type="text" placeholder="9999 9999 9999 9999"/>
             </div>
-            <div className="form-group">
-              <label htmlFor="address_complement">Complemento</label>
-              <input type="text" id="address_complement" name="address_complement"/>
+            <div className="mb-4">
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="address_complement">
+                Complemento:
+              </label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                name="address_complement"
+                id="address_complement" type="text" placeholder="9999 9999 9999 9999"/>
             </div>
           </form>
-          <div>
-            <button onClick={previousStage}>Voltar</button>
+          <div className="flex justify-center gap-4">
+            <button className="py-3 lg:py-4 px-12 lg:px-16 text-white-500 font-semibold rounded-lg bg-black-500 hover:shadow-black-md transition-all outline-none" onClick={previousPaymentStage}>Voltar</button>
+            <button className="py-3 lg:py-4 px-12 lg:px-16 text-white-500 font-semibold rounded-lg bg-orange-500 hover:shadow-orange-md transition-all outline-none" onClick={nextStage}>Concluir</button>
           </div>
         </>
       ) }
@@ -170,13 +204,13 @@ const PaymentDialog =() => {
           </div>
           <ul>
             <li>
-              Nome: daksjdla
+              <b>Nome:</b> daksjdla
             </li>
             <li>
-              Email: daksjdla
+              <b>Email:</b> daksjdla
             </li>
             <li>
-              Telefone: daksjdla
+              <b>Telefone</b> daksjdla
             </li>
           </ul>
           <ul>
@@ -189,9 +223,9 @@ const PaymentDialog =() => {
 
             No cartão: xxx xxx xxx 1234 em 1 vez
           </div>
-          <div>
-            <button onClick={previousStage}>Voltar</button>
-            <button onClick={closeModal}>Finalizar compra</button>
+          <div className="flex justify-center gap-4">
+            <button className="py-3 lg:py-4 px-12 lg:px-16 text-white-500 font-semibold rounded-lg bg-black-500 hover:shadow-black-md transition-all outline-none" onClick={previousStage}>Voltar</button>
+            <button className="py-3 lg:py-4 px-12 lg:px-16 text-white-500 font-semibold rounded-lg bg-orange-500 hover:shadow-orange-md transition-all outline-none" onClick={closeModal}>Concluir</button>
           </div>
         </>
       ) }

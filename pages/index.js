@@ -5,13 +5,15 @@ import CallSection from "../components/CallSection";
 import SeoHead from "../components/SeoHead";
 import TestimoniSection from "../components/TestimoniSection";
 import ImageWithText from "../components/ImageWithText";
+import { useI18n } from '../utils/languages'
 
 export default function Home() {
+  const {getString} = useI18n()
   return (
     <>
       <SeoHead title='LaslesVPN Landing Page' />
       <Layout>
-        <Hero title="Não fique de fora do webnar holístico <strong>nome muito atrativo</strong>"
+        <Hero title={getString('home.hero.title')}
               description="Nele falaremos sobre <strong>algo muito importante</strong> e será feito de tal forma, com tais pessoas, você não pode perder."
               button={{
                   href: "/events/webnar-xyz",

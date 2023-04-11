@@ -35,3 +35,7 @@ dialog{
     padding: 0.5rem;
     gap: 0.5rem;
 }
+h2{
+    font-weight: bold;
+    margin-bottom: 1.3em;
+}
