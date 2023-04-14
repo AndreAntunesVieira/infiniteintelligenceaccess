@@ -40,7 +40,7 @@ export default function Home() {
         />
           <ImageWithText
               id="about"
-              description="O evento será sobre XYZ, contará com ABC..." image="/assets/karine2.png" title="Quem é Karine Rodrigues" features={[
+              description="O evento será sobre XYZ, contará com ABC..." image="/assets/karine.png" title="Quem é Karine Rodrigues" features={[
               "Qualificação 1 muito relevante",
               "Segunda qualificação em ordem de importancia",
               "Terceira qualificação",
