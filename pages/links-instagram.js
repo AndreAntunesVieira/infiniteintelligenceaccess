@@ -49,7 +49,7 @@ export default function LinksInstagram() {
         </div>
         <ul id="main-links">
           <li>
-            <a href="#" target="_blank">
+            <a href={getString('links-instagram.schedule-therapy-link')} target="_blank">
               <span>{getString('links-instagram.schedule-therapy')}</span>
             </a>
           </li>

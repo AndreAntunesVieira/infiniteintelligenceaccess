@@ -6,6 +6,7 @@
   },
   "links-instagram": {
     "schedule-therapy": "Schedule Therapy",
+    "schedule-therapy-link": "https://api.whatsapp.com/send/?phone=31639322389&text=Hi,%20I%20Would%20like%20to%20schedule%20an%20appointment.",
     "anonymous-agreed-group": "Anonymous agreed group",
     "join-group-webnar-form": "https://forms.gle/s6k3YDKPHZHE4EbZ9",
     "join-group-webnar": "Join group webnar",
