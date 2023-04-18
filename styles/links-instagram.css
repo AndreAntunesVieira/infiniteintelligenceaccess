@@ -27,7 +27,8 @@ a {
 }
 
 body {
-    background-color: #ea1a66;
+    background-color: rgba(204,132,123,1);
+    background: radial-gradient(at bottom right, rgba(77,136,161,1) 0%, rgba(234,161,84,1) 29%, rgba(204,132,123,1) 53%, rgba(242,93,56,1) 94%);
 }
 
 #brand {
@@ -44,6 +45,8 @@ body {
     display: flex;
     gap: 8px;
     flex-direction: column;
+    position: fixed;
+    right: 0;
 }
 .language-selector {
     width: 60px;
@@ -71,7 +74,9 @@ h2{
 }
 
 main {
-    background: linear-gradient(200deg, rgba(244, 193, 134, 1) 0%, rgba(202, 154, 185, 1) 100%);
+    background: radial-gradient(at bottom right, rgba(77,136,161,1) 0%, rgba(234,161,84,1) 29%, rgba(204,132,123,1) 53%, rgba(242,93,56,1) 94%);
+    background-size: cover;
+    background-position: right bottom;
     min-height: 100vh;
     width: 100%;
     display: flex;
@@ -119,4 +124,10 @@ main {
     gap: 16px;
     justify-content: center;
     width: 300px;
+}
+
+@media (max-width: 768px){
+    #brand img{
+        zoom: 0.8;
+    }
 }
