@@ -29,6 +29,6 @@ export const useI18n = () => {
 
     return languageStrings[name]
   }
-  return { getString }
+  return { getString, locale }
 }
 export default { pt, en }

@@ -1,0 +1,119 @@
+
+ul {
+    list-style: none;
+}
+
+li {
+    text-align: unset;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+@font-face {
+    font-family: waffle-soft;
+    src: url(../public/fonts/1d2f409f46c357c5754158b6bfe98ac8.woff2);
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: optima;
+    src: url(../public/fonts/7427eef3a02c9221a63581318b52bf2a.woff2);
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background-color: #ea1a66;
+}
+
+#brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#languages{
+    top: 0;
+    right: 0;
+    padding: 8px;
+    display: flex;
+    gap: 8px;
+}
+.language-selector {
+    width: 60px;
+    opacity: 0.5;
+    border: 2px solid rgba(255,255,255,0.6) !important;
+}
+.language-selector.selected{
+    opacity: 1;
+}
+h1{
+    color: #7E77A3;
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    font-family: optima;
+}
+h2{
+    color: white;
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 0;
+    font-family: optima;
+}
+
+main {
+    background: linear-gradient(200deg, rgba(244, 193, 134, 1) 0%, rgba(202, 154, 185, 1) 100%);
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 0;
+    gap: 24px;
+}
+
+#main-links a {
+    position: relative;
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, rgba(244,231,238,0.8) 0%, rgba(242,212,226,0.8) 50%, rgba(255,255,255,0.8) 100%);
+    border-radius: 32px;
+    padding: 16px;
+    margin: 16px 0;
+    gap: 3pt;
+    color: #7E77A3;
+}
+
+#main-links a span {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: waffle-soft;
+}
+
+#main-links a picture {
+    background-color: #3F3B54;
+    border-radius: 50%;
+    padding: 12px;
+    margin: 0 -40px;
+    z-index: 2;
+}
+
+#midias-sociais {
+    display: flex;
+    gap: 16px;
+}
+#social-media{
+    display: flex;
+    gap: 8px;
+    justify-content: space-around;
+    width: 300px;
+}

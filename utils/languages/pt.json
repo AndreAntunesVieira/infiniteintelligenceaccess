@@ -3,5 +3,11 @@
     "hero": {
       "title": "Não fique de fora do webnar holístico <strong>nome muito atrativo</strong>"
     }
+  },
+  "links-instagram": {
+    "schedule-therapy": "Agendar terapia",
+    "anonymous-agreed-group": "Grupo acordados anônimos",
+    "join-group-webnar": "Participar Webnar em grupo",
+    "my-website": "Acesse meu site"
   }
 }
