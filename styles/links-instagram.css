@@ -26,7 +26,7 @@ a {
     font-style: normal;
 }
 
-body {
+#links-instagram {
     background-color: rgba(204,132,123,1);
     background: radial-gradient(at bottom right, rgba(77,136,161,1) 0%, rgba(234,161,84,1) 29%, rgba(204,132,123,1) 53%, rgba(242,93,56,1) 94%);
 }
@@ -48,7 +48,7 @@ body {
     position: fixed;
     right: 0;
 }
-.language-selector {
+#links-instagram .language-selector {
     width: 60px;
     opacity: 0.5;
     border: 2px solid rgba(255,255,255,0.6) !important;
@@ -56,7 +56,7 @@ body {
 .language-selector.selected{
     opacity: 1;
 }
-h1{
+#links-instagram h1{
     color: #7E77A3;
     text-align: center;
     font-size: 2.5em;
@@ -64,7 +64,7 @@ h1{
     font-family: optima;
     margin-bottom: 0;
 }
-h2{
+#links-instagram h2{
     color: white;
     text-align: center;
     font-size: 1em;
@@ -73,7 +73,7 @@ h2{
     font-family: optima;
 }
 
-main {
+#links-instagram {
     background: radial-gradient(at bottom right, rgba(77,136,161,1) 0%, rgba(234,161,84,1) 29%, rgba(204,132,123,1) 53%, rgba(242,93,56,1) 94%);
     background-size: cover;
     background-position: right bottom;
